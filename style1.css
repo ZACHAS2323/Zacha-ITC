@@ -1,0 +1,54 @@
+ html{
+    height: 100%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+
+}
+
+p {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+  }
+
+  .colored-span {
+    color: red;
+  }
+
+  .inputbox {
+    margin: 20px;
+  }
+  
+  .inputbox input {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .inputbox span {
+    color: yellow; 
+    font-style: italic;
+  }  
+
+  .navbar {
+    color: greenyellow;
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space
+  }
+
+
+  body {
+    background-image: linear-gradient(rgba(202, 186, 186, 0.75),rgba(0,0,0,0.75)),url(Images/Background2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .result #result {
+    color: goldenrod; 
+  }
+  
