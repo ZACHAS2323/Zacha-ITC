@@ -1,0 +1,161 @@
+ html{
+    height: 100%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    
+}
+
+p {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+  }
+
+  .colored-span {
+    color: red;
+  }
+
+  .inputbox {
+    margin: 20px;
+  }
+  
+  .inputbox input {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .inputbox span {
+    color: goldenrod; 
+    font-style: italic;
+  }  
+
+  .navbar {
+    color: yellow;
+    
+  }
+
+  .right-align {
+    text-align: right; /* Align the content to the right */
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 20;
+    padding: 0;
+  }
+  
+  li {
+     list-style: none;
+    display: inline;
+    margin: 0 20px;
+  }
+
+  body {
+    background-image: linear-gradient(rgba(148, 140, 140, 0.75),rgba(0,0,0,0.75)),url(Images/Background2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+ a:link {
+  color: purple; 
+     }
+
+    a:visited {
+    color: yellowgreen; 
+       }
+
+       a:hover {
+    color: red;
+       }
+
+       a:active {
+    color: yellow; 
+      }
+
+  .inputbox,
+.btn_container,
+.result {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.result #result1 {
+  color: goldenrod; 
+}
+.result #result2 {
+  color: goldenrod; 
+}
+
+.result #result3 {
+  color: goldenrod; 
+}
+
+#result {
+
+  color: goldenrod; 
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+#sum {
+
+  color: goldenrod; 
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+#resultF{
+  color: goldenrod; 
+  font-size: 18px; 
+  font-weight: bold;
+
+}
+
+label[for="factorial"] {
+  color: navajowhite; 
+  
+}
+
+label[for="input1"] {
+  color: navajowhite;
+  
+}
+
+label[for="average"] {
+  color: navajowhite; 
+  
+}
+
+
+form {
+  text-align: center; 
+  margin: 20px auto; 
+  width: 50%; 
+}
+
+
+form label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+form input[type="number"],
+form button {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+
+
+#factorial,#input1,
+#average {
+
+  margin: auto;
+  border: 3px solid goldenrod;
+  padding: 10px;
+  
+}
