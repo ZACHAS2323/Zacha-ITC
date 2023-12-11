@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Payroll</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body onload="in_employee()">
+
+<nav> 
+    <label class="navbar"></label>
+    <ul>
+        <div class="right-align">
+     <li><a class="active" href="index.html">HOME</a></li>
+     <li><a href="assign1.html">Assignment 1</a></li>
+     <li><a href="assign2.html">Assignment 2</a></li>
+     <li><a href="assign3.html">Assignment 3</a></li>
+     <li><a href="payroll.html">Payroll</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>SIMPLE PAYROLL ASSIGNMENT 4</h1>
+    <div class="inputbox_payroll">
+        <span>Employee Name</span>
+        <input id="Employee" type="text" required="required">
+        <span>Days Work</span>
+        <input id="days_work" type="number" required="required">
+        <span>Daily Rate</span>
+        <input id="daily_rate" type="number" required="required">
+        <span>Deduction Amount</span> 
+        <input id="deduction_amount" type="number" required="required">
+    </div>
+    <div class="delete">
+        <input id="Input" type="number" required="required">
+        <span>Remove Employee</span>
+    </div>
+    <div class="button-row">
+        <button class="rmv" onclick="removeEmployee()">Remove</button>
+    </div>
+    <div class="add_button">
+        <button class="rmv" onclick="addEmployee()">Add Employee</button>
+    </div>
+    <div class="cleartable">
+        <button class="rmv" onclick="cleartable()">Clear Table</button>
+    </div>
+    
+        <table>
+            <thead class="tablehead">
+            <tr>
+                <th class="tbl">No.</th>
+                <th class="tbl">Employee Name</th>
+                <th class="tbl">Days Worked</th>
+                <th class="tbl">Daily Rate</th>
+                <th class="tbl">Gross Pay</th>
+                <th class="tbl">Deduction Amount</th>
+                <th class="tbl">Net Pay</th>
+            </tr>
+            </thead>
+            <tbody id="tablebody"></tbody>
+        </table>
+    
+</main>
+
+<footer>
+    <p></p>
+</footer>
+
+<script>
+    var employeeArray = [];
+
+    function in_employee(){
+        document.getElementById("tablebody").innerHTML = "";
+    }
+
+    function addEmployee() {
+        let emp = {
+            Employee: document.getElementById("Employee").value,
+            DaysWork: document.getElementById("days_work").value,
+            DailyRate: document.getElementById("daily_rate").value,
+            DeductionAmount: document.getElementById("deduction_amount").value,
+            
+            GrossPay: function() {
+                return this.DaysWork * this.DailyRate;
+            },
+            NetPay: function() {
+                return this.GrossPay() - this.DeductionAmount;
+            }
+        };
+
+        employeeArray.push(emp);
+        showTable();
+    }
+
+    function removeEmployee() {
+
+        var todelete;
+
+        let emnum = document.getElementById("Input").value;
+
+        todelete=confirm("Delete Employee No. "+emnum+"?");
+
+        if(todelete){
+            employeeArray.splice(emnum - 1, 1);
+        showTable();
+        }
+
+    }
+     function cleartable(){
+
+        var toclear;
+
+        toclear=confirm("Delete all employee/s in the table?");
+
+        if (toclear) {
+
+             in_employee();
+
+        }
+
+    }
+
+    function showTable(){
+        let tbody = "";
+        for(let i = 0; i < employeeArray.length; i++){
+            let ln = i + 1;
+
+            tbody += "<tr>"
+                + '<td>' + ln + '</td>'
+                + '<td>' + employeeArray[i].Employee + '</td>'
+                + '<td>' + employeeArray[i].DaysWork + '</td>'
+                + '<td>' + employeeArray[i].DailyRate + '</td>'
+                + '<td>' + employeeArray[i].GrossPay() + '</td>'
+                + '<td>' + employeeArray[i].DeductionAmount + '</td>'
+                + '<td>' + employeeArray[i].NetPay() + '</td>';
+        }
+        document.getElementById("tablebody").innerHTML = tbody;
+    }
+</script>
+
+</body>
+</html>
