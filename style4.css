@@ -1,0 +1,145 @@
+ /* style.css */
+html{
+    height: 100%;
+}
+
+h1 {
+    color: goldenrod;
+    text-align: center;
+    text-shadow: 2px 2px 5px blue;
+}
+
+.right-align {
+    text-align: right; /* Align the content to the right */
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 20;
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: goldenrod;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: goldenrod;
+}
+
+tr:nth-child(even) {
+    background-color: goldenrod;
+}
+
+tr:hover {
+    background-color: blue;
+}
+
+.inputbox_payroll {
+    margin-bottom: 20px;
+    color: goldenrod;
+}
+
+.inputbox_payroll input {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.delete {
+    margin-bottom: 10px;
+    color: goldenrod;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row; /* Arrange buttons in a row */
+    align-items: center; 
+    float: left;
+}
+
+button {
+    display: block;
+    border-radius: 2em;
+    background-color: goldenrod;
+    box-shadow: 0 3px 10px 0 black(90, 136, 209);
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom:20px;
+    float: left;
+}
+  
+  
+  button:hover {
+      background-color: none;
+  }
+  
+  button:active {
+    background-color: goldenrod;
+    box-shadow: 0 5px #646161;
+    transform: translateY(4px);
+  }
+
+.rmv {
+    padding: 8px 16px;
+    background-color: goldenrod;
+    color: blue;
+    font-weight: 100;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.rmv:hover {
+    background-color: goldenrod;
+}
+
+
+body {
+    background-image: linear-gradient(rgba(224, 218, 218, 0.75),rgba(0,0,0,0.75)),url(Images/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  a:link {
+    color: purple; /* Color for unvisited links */
+       }
+
+      a:visited {
+    color: goldenrod; /* Color for visited links */
+       }
+
+       a:hover {
+    color: navy; /* Color for links when hovered */
+       }
+
+       a:active {
+    color: yellow; /* Color for active links (when clicked) */
+      }
+
+      .result #result {
+        color: goldenrod;
+      }
