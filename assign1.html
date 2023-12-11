@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Conversion</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="style1.css">
+
+
+    </head>
+
+    <body>
+
+        <nav> 
+            <label class="navbar">Assignment 1</label>
+            <ul>
+                <li><a class="active" href="index.html">HOME</a></li>
+        <main>
+            <h1>CONVERSION ASSIGNMENT 1</h1>
+
+            <div class="select_container">
+                <select id="ConversionType" class="select_box">
+                    <option selected disabled="first">Choose a Conversion</option>
+                    <option value="1">Fahrenheit to Celsius</option>
+                    <option value="2">Celsius to Fahrenheit</option>
+                    <option value="3">Meters to Feet</option>
+                    <option value="4">Feet to Meters</option>
+                </select>
+            </div>
+            <br><br>
+            <div class="inputbox">
+                <input id="Input" type="number" required="required">
+                <span>Enter a number</span>
+            </div>
+            <div class="btn_container">
+                <button class="btn btn1" id="convert">Convert</button>
+                <button class="btn btn2" id="clear">Clear</button>
+            </div>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+
+        </main>
+
+        <footer>
+        </footer>
+
+    <script>
+        document.getElementById("convert").addEventListener("click",
+        function() {
+            const choice = document.getElementById("ConversionType").value;
+            const inputValue = parseFloat(document.getElementById("Input").value);
+            let result;
+
+        switch (choice) {
+            case "1":
+                result = ((inputValue - 32) * 5) / 9; 
+                document.getElementById("result").innerHTML = `${inputValue} Fahrenheit = ${result.toFixed(2)} Celsius`;
+                break;
+            case "2":
+                result = (inputValue * 9) / 5 + 32; 
+                document.getElementById("result").innerHTML = `${inputValue} Celsius = ${result.toFixed(2)} Fahrenheit`;
+                break;
+            case "3":
+                result = inputValue * 3.28084;
+                document.getElementById("result").innerHTML = `${inputValue} Meters = ${result.toFixed(2)} Feet`;
+                break;
+            case "4":
+                result = inputValue / 3.28084; 
+                document.getElementById("result").innerHTML = `${inputValue} Feet = ${result.toFixed(2)} Meters`;
+                break;
+            default:
+                document.getElementById("result").innerHTML = "Please select a valid conversion type.";
+      }
+    }
+    );
+    document.getElementById("clear").addEventListener("click",
+        function() {
+            document.getElementById("Input").value="";
+            document.getElementById("result").innerHTML="";
+    }
+    );
+    </script>
+
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+
+    </body>
+
+</html>
