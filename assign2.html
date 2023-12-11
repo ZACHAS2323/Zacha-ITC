@@ -1,0 +1,112 @@
+ <!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Income Tax Calculator</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="style3.css">
+        
+
+    </head>
+
+    <body>
+
+        <nav> 
+            <label class="navbar">Assignment 2</label>
+            <ul>
+      <div class="right-align">
+            <li><a class="active" href="index.html">HOME</a></li>
+            <li><a href="assign1.html">Assignment 1</a></li>
+            <li><a href="assign2.html">Assignment 2</a></li>
+            <li><a href="assign3.html">Assignment 3</a></li>
+            <li><a href="payroll.html">Payroll</a></li>
+        </ul>
+     </nav>
+
+        <main>
+            <h1>INCOME TAX CALCULATOR ASSIGNMENT 2</h1>
+
+            <br><br>
+            <div class="inputbox">
+                <input id="Input" type="number" required="required">
+                <span>Enter Income</span>
+            </div>
+            <div class="btn_container">
+                <button class="btn btn1" id="calculate">Calculate</button>
+                <button class="btn btn2" id="clear">Clear</button>
+            </div>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+
+        </main>
+        
+        <footer>
+            <p></p>
+        </footer>
+
+    <script>
+    document.getElementById("calculate").addEventListener("click",
+        function() {
+            var income, basic_tax, excess, rate;
+            income = document.getElementById("Input").value*1;
+            let result;
+
+        if(income <= 250000){
+            rate = .0
+            result = income * rate;
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+        else if(income > 250000 && income <= 400000){
+            excess =income - 250000;
+            rate = .2
+            result = excess * rate;
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+        else if(income > 400000 && income <= 800000){
+            basic_tax = 30000
+            excess =income - 400000;
+            rate = .25
+            result = basic_tax + (excess * rate);
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+        else if(income > 800000 && income <= 2000000){
+            basic_tax = 130000
+            excess =income - 800000;
+            rate = .3
+            result = basic_tax + (excess * rate);
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+        else if(income > 2000000 && income <= 8000000){
+            basic_tax = 490000
+            excess =income - 2000000;
+            rate = .32
+            result = basic_tax + (excess * rate);
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+        else {
+            basic_tax = 2410000
+            excess =income - 8000000;
+            rate = .35
+            result = basic_tax + (excess * rate);
+            document.getElementById("result").innerHTML = `Total Income Tax is P${result.toFixed(2)}`;
+        }
+    }
+    );
+    document.getElementById("clear").addEventListener("click",
+        function() {
+            document.getElementById("Input").value="";
+            document.getElementById("result").innerHTML="";
+    }
+    );
+    </script>
+
+    <!-- Load external JavaScript -->
+    <script src="scripts.js"></script>
+        
+    </body>
+
+</html>
